@@ -1,0 +1,65 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.example.hookgps'
+    compileSdk {
+        version = release(36) {
+            minorApiLevel = 1
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file("D:\\jks\\Android.jks") // JKS文件的相对或绝对路径
+            storePassword "123456"
+            keyAlias "Android"
+            keyPassword "123456"
+        }
+    }
+    defaultConfig {
+        applicationId "com.example.hookgps"
+        minSdk 29
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures {
+        aidl true
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation files('libs\\BaiduLBS_Android.jar')
+    compileOnly libs.api
+
+    implementation libs.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}
