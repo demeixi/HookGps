@@ -1,27 +1,14 @@
-VirtualLocation Xposed Module
-简介
-VirtualLocation 是一款基于 Xposed 框架实现的系统级虚拟定位模块，可配合百度地图完成位置模拟调试。
-使用说明
-请在 AndroidManifest.xml 中配置你自己申请的百度地图 Key。
-激活本 Xposed 模块，勾选推荐应用分组即可，无需手动勾选目标应用，配置完成后重启设备生效。
-该方案规避直接勾选单个目标应用，以此降低因 Xposed 注入被应用检测的风险。
-⚠️ 注意：本方案仅为降低检测风险，不能保证 100% 绕过所有应用的检测机制，不同应用防护策略存在差异。
-免责声明
-本项目源码仅用于 Android 安全技术学习、学术研究与技术交流目的，仅供合法调试场景使用。
-禁止将本项目用于任何违反法律法规、侵犯他人权益的行为。
-任何使用者因滥用本项目产生的一切后果，均由使用者本人自行承担，与本项目作者无关。
-下载、编译、使用本项目源代码，即代表你已完整阅读并同意以上全部免责声明。
-英文版本（适合 GitHub 双语 README，可选）
-VirtualLocation Xposed Module
-Introduction
-VirtualLocation is a system‑level virtual location module built on the Xposed framework, supporting location simulation for BaiduMap.
-Usage
-Configure your own Baidu Map key in AndroidManifest.xml.
-Enable this Xposed module. Check the recommended application group instead of manually selecting target apps, then reboot your device.
-This approach avoids hooking specified apps directly to reduce the risk of Xposed injection detection.
-Note: This can only reduce detection risk and cannot guarantee full bypass against all application detection mechanisms.
-Disclaimer
-This source code is for academic research and technical communication only, for legitimate debugging purposes.
-Any illegal or improper use is strictly prohibited.
-All consequences arising from the use or modification of this project shall be borne solely by the end‑user, and shall have nothing to do with the author.
-By downloading, compiling or using this source code, you agree to the above disclaimer.
+虚拟定位模块（Xposed模块）
+
+📌 项目简介
+本项目是一款系统级 Xposed 虚拟定位模块，专为百度地图适配开发，可实现精准的位置模拟功能，主要用于开发调试、位置测试等技术场景。模块采用全局生效机制，区别于传统单应用Hook模式，大幅规避设备环境检测风险。
+🔧 使用与编译说明
+1.密钥配置：编译项目前，需手动修改 AndroidManifest.xml 文件，替换为个人申请的百度地图官方 Key，否则模块无法正常运行。
+2.模块激活：在 Xposed / LSPosed 框架中开启本模块，仅需勾选推荐应用分组，无需手动勾选指定目标应用。
+3.生效方式：配置完成后重启设备，模块即可全局生效。
+4.防检测优势：摒弃传统指定应用Hook方式，从根源避免因单独挂载应用，导致Xposed注入环境被APP检测识别的问题。
+⚠️ 免责声明
+本项目源码仅用于学术研究、技术学习与合法开发调试，仅供技术交流使用。
+使用者严禁利用本模块进行违法、违规、侵权及一切非合规场景的使用与修改。任何因私自滥用、非法使用本源码产生的一切法律风险、后果与责任，均由使用者本人全权承担，与项目作者无关。
+下载、编译、使用本项目源码，即代表默认完全阅读并同意本免责声明。
+|(Note: May contain AI-generated content.)
